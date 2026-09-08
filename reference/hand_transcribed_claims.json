@@ -1,0 +1,38 @@
+{
+  "note": "Manually transcribed published summaries; underlying microdata are not included. QMD prose is author-maintained.",
+  "census_2021": {
+    "source": "https://statistiques.public.lu/dam-assets/catalogue-publications/rp-2021/rp17-jeunes/17-03-fr.pdf",
+    "table": "4, page 8",
+    "components_percent": {
+      "20-24": [
+        56.8,
+        15,
+        6.8
+      ],
+      "25-29": [
+        25.1,
+        7,
+        5.6
+      ],
+      "30-34": [
+        7.6,
+        2.1,
+        3.4
+      ]
+    }
+  },
+  "schifflange_2022": {
+    "source": "https://schifflange.lu/wp-content/uploads/2023/04/Rapport-Observatoire-social-Schifflange-final-compressed.pdf",
+    "table": "20, pages 62-63, report March 2023",
+    "municipal": 100,
+    "fonds": 100,
+    "other": 46,
+    "total": 246
+  },
+  "reproducibility": {
+    "source": "https://media.nature.com/original/magazine-assets/d41586-018-02108-9/gertler-et-al.-Comment-supplementary-information",
+    "pages": "1-2",
+    "sample": 203,
+    "fully_reproducible_percent": 14
+  }
+}

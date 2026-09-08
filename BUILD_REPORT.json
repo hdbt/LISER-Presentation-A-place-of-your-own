@@ -1,0 +1,8 @@
+{
+  "python": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]",
+  "quarto": "1.7.32",
+  "node": "v24.19.0",
+  "status": "passed",
+  "checks": "input hashes, geometry and data snapshot equality, baseline calculations, 14 slide DOM control states",
+  "visual_review": "not performed by build; inspect at presentation resolution"
+}

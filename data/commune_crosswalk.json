@@ -1,0 +1,109 @@
+{
+  "RENAME": {
+    "Luxembourg-Ville": "Luxembourg",
+    "Kaerjeng": "Käerjeng",
+    "Petange": "Pétange",
+    "Grosbous-Wal": "Groussbus-Wal",
+    "Grosbus-Wal": "Groussbus-Wal",
+    "Erpeldange": "Erpeldange-sur-Sûre",
+    "Redange-sur-Attert": "Redange/Attert"
+  },
+  "MERGE": {
+    "Bascharage": [
+      "Käerjeng",
+      2012
+    ],
+    "Clémency": [
+      "Käerjeng",
+      2012
+    ],
+    "Burmerange": [
+      "Schengen",
+      2012
+    ],
+    "Wellenstein": [
+      "Schengen",
+      2012
+    ],
+    "Consthum": [
+      "Parc Hosingen",
+      2012
+    ],
+    "Hoscheid": [
+      "Parc Hosingen",
+      2012
+    ],
+    "Hosingen": [
+      "Parc Hosingen",
+      2012
+    ],
+    "Ermsdorf": [
+      "Vallée de l'Ernz",
+      2012
+    ],
+    "Medernach": [
+      "Vallée de l'Ernz",
+      2012
+    ],
+    "Heiderscheid": [
+      "Esch-sur-Sûre",
+      2012
+    ],
+    "Neunhausen": [
+      "Esch-sur-Sûre",
+      2012
+    ],
+    "Heinerscheid": [
+      "Clervaux",
+      2012
+    ],
+    "Munshausen": [
+      "Clervaux",
+      2012
+    ],
+    "Eschweiler": [
+      "Wiltz",
+      2015
+    ],
+    "Boevange-sur-Attert": [
+      "Helperknapp",
+      2018
+    ],
+    "Tuntange": [
+      "Helperknapp",
+      2018
+    ],
+    "Hobscheid": [
+      "Habscht",
+      2018
+    ],
+    "Septfontaines": [
+      "Habscht",
+      2018
+    ],
+    "Mompach": [
+      "Rosport-Mompach",
+      2018
+    ],
+    "Rosport": [
+      "Rosport-Mompach",
+      2018
+    ],
+    "Bous": [
+      "Bous-Waldbredimus",
+      2023
+    ],
+    "Waldbredimus": [
+      "Bous-Waldbredimus",
+      2023
+    ],
+    "Grosbous": [
+      "Groussbus-Wal",
+      2023
+    ],
+    "Wahl": [
+      "Groussbus-Wal",
+      2023
+    ]
+  }
+}

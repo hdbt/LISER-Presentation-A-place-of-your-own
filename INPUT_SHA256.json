@@ -1,0 +1,9 @@
+{
+  "data/raw/communes4326.geojson": "48fa4e6f293740017ed1ab941a9a2f3024a7b326f0e21f5b3689329785c515c9",
+  "data/raw/ipcn_review_5401.csv": "92ceb6516c854c13314c3a9a3436df9f87ac5172d8b3c8ffe2111f017efefb96",
+  "data/raw/leaving_home_eurostat.json": "7e7d985a9023219015a6017190c39ba39b2f3e4c88de5adc0e8c56d3fb1f8825",
+  "data/raw/loyers-apparts-2009-2025.xls": "26381116a5509a85228629ecddfabd1f536f3c03cc401ae9dec971d6bdc445b0",
+  "data/commune_crosswalk.json": "ec157c29540f739393617a033edb855d040122d375ebe327dfb93cc41ebe8383",
+  "reference/hand_transcribed_claims.json": "f4147dc68255367dcffe9fb8f7aeeb62c96097d45ce2bcf081ea9ac3fadf31d7",
+  "vendor/xlrd-2.0.2-py2.py3-none-any.whl": "ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9"
+}

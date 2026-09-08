@@ -1,0 +1,809 @@
+---
+title: "From Data to Action"
+author: "Hamid Bulut"
+date: "2026-09-09"
+format:
+  html:
+    template: quarto-assets/combined-template.html
+    embed-resources: true
+    theme: none
+    toc: false
+    anchor-sections: false
+    section-divs: false
+    html-math-method: plain
+output-file: LISER_Combined.html
+lang: en
+---
+
+<!-- EDIT THIS FILE. Each .slide block is one slide. Normal Markdown edits prose.
+The .speaker-note block is shown with N / Notes, not on the slide.
+Keep map IDs and HTML controls intact. Render: quarto render LISER_Combined.qmd
+Original Beamer and map presentations are preserved. -->
+
+
+:::::::::::::::::::::::: {.slide .active data-notes="0"}
+
+::::::::::::::::::::::: {.eyebrow}
+
+From Data to Action: Analysing and Communicating Research from LISER’s Local Observatories
+
+:::::::::::::::::::::::
+
+::::::::::::::::::::::: {.two}
+
+:::::::::::::::::::::: {.middle}
+
+```{=html}
+<span class="title-small">A place of your own</span>
+```
+
+# You’re 27.<br>Where can<br>you <em class="accent">go?</em>
+
+::: {.small}
+
+**Hamid Bulut** · 9 September 2026\
+Interview — Research Associate in Social Sciences and Territorial Dynamics (Ref. 26-22)
+
+:::
+
+```{=html}
+<p class="subtitle">Leaving home, apartment rents, and the geography of a monthly budget.</p>
+```
+
+```{=html}
+<p class="small">An evidence-led scenario using the 2021 census and advertised rents, 2009–2025.</p>
+```
+
+::::::::::::::::::::: {}
+
+```{=html}
+<button onclick="go(1)">Begin →</button>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::: {.map-area}
+
+```{=html}
+<svg class="map hero-map" id="hero" role="img" aria-label="Luxembourg rental budget scenario in 2025"></svg>
+```
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::::
+
+```{=html}
+<p class="source">Map: illustrative €1,200 monthly rent budget × 45 m², 2025. Green: commune average within budget; terracotta: average above; hatching: unavailable. Not a map of actual departures.</p>
+```
+
+
+::: {.speaker-note}
+
+0:00–0:45. Introduce the mandated topic and the concrete housing question. The age 27 is an illustrative person, not an EU ranking.
+
+:::
+
+::::::::::::::::::::::::
+
+
+:::: {.slide .editorial}
+
+::: {.eyebrow}
+01 / Leaving home and the rental question
+:::
+
+## Leaving home around 27: what does a rental budget buy?
+
+::::: {.two style="margin-top:24px"}
+
+:::: {.middle}
+
+::: {.huge .accent}
+26.6
+:::
+
+### years · Luxembourg, 2025
+
+Estimated age of leaving the parental home.
+
+::: {.small}
+Eurostat · Both sexes. The indicator estimates the age at which 50% no longer live with their parents; it does not average individually recorded departure dates.
+:::
+
+::::
+
+:::: {.middle}
+
+### The question we can explore
+
+For someone seeking a place of their own, where would **€1,200 per month** cover a **45 m² rental scenario** — and how has that changed since 2010?
+
+::: {.small}
+Budget expressed in 2025 purchasing power. Budget and area are illustrative assumptions, not measured young-adult averages.
+:::
+
+::::
+
+:::::
+
+::: {.small .rule}
+A national indicator, not a departure age for each commune. The rental scenario explores costs; it does not explain why people leave or stay.
+:::
+
+::: {.source}
+[Eurostat · Estimated average age of young persons leaving the parental household, yth_demo_030](https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table?lang=en). 2025: 26.6 years; 2024: 26.9. Dataset snapshot updated 16 April 2026.
+:::
+
+::: {.speaker-note}
+Allow about one minute. Connect the opening person aged 27 to the 2025 national estimate of 26.6. Eurostat's official title uses estimated average age; its definition is the age at which 50% no longer live with their parents. This does not establish an individual departure date or why people leave. Transition directly to the rental map: where does an illustrative €1,200 budget for 45 m² fit? Hold purchasing power constant. The census bars remain in the appendix for background. Do not suggest the rental map estimates departure ages or establishes causation.
+:::
+
+::::
+
+:::::::::::::::::::::::: {.slide}
+
+::::::::::::::::::::::: {.eyebrow}
+
+02 / Explore the rent budget
+
+:::::::::::::::::::::::
+
+## How much does having a choice cost?
+
+::::::::::::::::::::::: {.map-layout}
+
+:::::::::::::::::::::: {}
+
+::::::::::::::::::::: {.control}
+
+```{=html}
+<label for="budget"><span id="budgetLabel">Monthly budget · 2025 euros</span> <strong id="budgetVal"></strong></label>
+```
+
+```{=html}
+<input id="budget" type="range" min="600" max="3000" step="50" value="1200">
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.control}
+
+```{=html}
+<label for="size">Illustrative area <strong id="sizeVal"></strong></label>
+```
+
+```{=html}
+<input id="size" type="range" min="25" max="100" step="5" value="45">
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.control}
+
+```{=html}
+<label for="basis">Comparison basis</label>
+```
+
+```{=html}
+<select id="basis"><option value="real" selected>Same purchasing power · 2025 €</option><option value="nominal">Same nominal budget</option></select>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.control}
+
+```{=html}
+<label for="year">Calendar year</label>
+```
+
+```{=html}
+<select id="year"></select>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.no-print}
+
+```{=html}
+<button id="play">Play years</button>
+```
+
+```{=html}
+<button id="reset">Reset</button>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.stats}
+
+:::::::::::::::::::: {}
+
+```{=html}
+<b id="within"></b>
+```
+
+```{=html}
+<span>commune averages within budget</span>
+```
+
+::::::::::::::::::::
+
+:::::::::::::::::::: {}
+
+```{=html}
+<b id="available"></b>
+```
+
+```{=html}
+<span>with data / 100</span>
+```
+
+::::::::::::::::::::
+
+:::::::::::::::::::::
+
+```{=html}
+<p class="small rule" id="formula"></p>
+```
+
+```{=html}
+<p class="small" style="margin-top:12px">Scenario only. Commune mean €/m² × size; no size-specific rental estimate. Allow separately for other housing costs.</p>
+```
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::: {style="display:flex;flex-direction:column;min-height:0"}
+
+::::::::::::::::::::: {.map-area}
+
+```{=html}
+<svg class="map" id="mainMap" role="img" aria-label="Interactive rental scenario by commune"></svg>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.legend}
+
+```{=html}
+<span><i class="sw green"></i>Average within budget / Moyenne dans le budget</span>
+```
+
+```{=html}
+<span><i class="sw orange"></i>Average above budget / Moyenne au-dessus</span>
+```
+
+```{=html}
+<span><i class="sw missing"></i>Unavailable / Indisponible</span>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::::
+
+```{=html}
+<aside id="detail"><label for="commune" class="small">Inspect a commune</label><select id="commune" style="width:100%;margin:10px 0"></select><div id="detailBody"></div><button id="zoom" class="no-print">Zoom to commune</button><button id="unzoom" class="no-print" style="margin-top:8px">Whole country</button></aside>
+```
+
+:::::::::::::::::::::::
+
+```{=html}
+<p class="source">Observatoire de l’Habitat, advertised apartment rents. Fixed 2023 geography; historical mergers combined only when every component has a published rate.</p>
+```
+
+
+::: {.speaker-note}
+
+2:35–5:05. Demonstrate the map briefly. Default €1,200, 45 m², 2025. Change one control, explain coverage, then reset. Commune average times size is a scenario, not a small-flat prediction.
+
+:::
+
+::::::::::::::::::::::::
+
+
+
+:::::::::::::::::::::::: {.slide}
+
+::::::::::::::::::::::: {.eyebrow}
+
+03 / Hold the scenario constant
+
+:::::::::::::::::::::::
+
+## The same purchasing power. The same space. {#compareTitle}
+
+```{=html}
+<p class="subtitle" id="compareSub" style="margin-top:15px"></p>
+```
+
+::::::::::::::::::::::: {.compare}
+
+:::::::::::::::::::::: {.frame}
+
+```{=html}
+<header><b>2010</b><span id="countOld"></span></header>
+```
+
+::::::::::::::::::::: {.map-area}
+
+```{=html}
+<svg class="map" id="oldMap" role="img" aria-label="Rental scenario 2010"></svg>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::: {.frame}
+
+```{=html}
+<header><b>2025</b><span id="countNew"></span></header>
+```
+
+::::::::::::::::::::: {.map-area}
+
+```{=html}
+<svg class="map" id="newMap" role="img" aria-label="Rental scenario 2025"></svg>
+```
+
+:::::::::::::::::::::
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::::
+
+```{=html}
+<p class="summary" id="balanced"></p>
+```
+
+```{=html}
+<p class="small" id="basisExplanation"></p>
+```
+
+```{=html}
+<p class="source">Same colours as the interactive map. The matched comparison uses only communes with published rates in both endpoint years; listing composition can still change.</p>
+```
+
+
+::: {.speaker-note}
+
+5:05–6:35. Same purchasing power using IPCN, not earnings. Matched communes address coverage changes but not listing composition. Counts are communes, not available homes.
+
+:::
+
+::::::::::::::::::::::::
+
+
+
+:::::::::::::::::::::::: {.slide}
+
+::::::::::::::::::::::: {.eyebrow}
+
+Local evidence / Schifflange
+
+:::::::::::::::::::::::
+
+## Housing stock is not housing access
+
+::: {.subtitle style="margin-top:18px"}
+Schifflange: can existing social housing meet young adults’ needs?
+:::
+
+::::: {.schifflange-layout}
+
+:::: {.stock-baseline}
+### What we know
+
+**246 social rental dwellings**
+
+Recorded in 2022; published by LISER in 2023.
+
+A historical stock count. It does not tell us how many homes become available or serve young adults.
+::::
+
+:::: {.stock-questions}
+### What we need to establish
+
+| Question | Evidence needed |
+|:--|:--|
+| **Availability** | Vacancies, turnover and waiting times |
+| **Access** | Eligibility and barriers, including for non-applicants |
+| **Suitability** | Rents, sizes and locations matched to young adults’ needs |
+::::
+
+:::::
+
+::: {.stock-action}
+### Proposed action · Match provision to need
+
+Commission an updated stock-and-demand assessment, including young adults outside waiting lists, to identify which housing response merits development.
+:::
+
+::: {.source}
+[LISER, Observatoire social de Schifflange (March 2023), Table 20, pp. 62–63](https://schifflange.lu/wp-content/uploads/2023/04/Rapport-Observatoire-social-Schifflange-final-compressed.pdf#page=62). 2022 stock: 100 municipal · 100 Fonds du Logement · 46 other providers. Excludes GLS, emergency housing and assisted ownership. The assessment above is proposed, not an adopted measure.
+:::
+
+
+::: {.speaker-note}
+
+Schifflange illustrates what local evidence adds to the rental scenario. The 246 dwellings are a dated baseline, not evidence of adequate provision or vacancies. Walk through availability, access and suitability. The report recommends examining dwelling types, location and demand; the proposed assessment here adds a focus on young adults, including non-applicants. Present the French action as a proposal, not an adopted measure or a finding that one intervention is already justified.
+
+:::
+
+::::::::::::::::::::::::
+
+
+:::: {.slide .editorial}
+
+## The analytical cycle
+
+::::: {.analytical-cycle role="group" aria-label="Question, Data, Analysis, Products, Decision, then feedback to the question. Reproducibility and transparency underpin every stage."}
+
+```{=html}
+<svg class="cycle-arrows" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="cycle-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" overflow="visible"><path d="M0,0 L8,4 L0,8" fill="#147c68"/></marker></defs><g fill="none" stroke="#147c68" stroke-width="2.5" marker-end="url(#cycle-arrow)"><path d="M650 48 Q790 48 825 115"/><path d="M850 220 Q850 280 775 320"/><path d="M560 375 L445 375"/><path d="M225 320 Q150 280 150 220"/><path d="M175 115 Q210 48 350 48" stroke-dasharray="6 6"/></g></svg>
+```
+
+::: {.cycle-node .cycle-question}
+**01 · Question**\
+Agree the municipal need
+:::
+
+::: {.cycle-node .cycle-data}
+**02 · Data**\
+Source, document, protect
+:::
+
+::: {.cycle-node .cycle-analysis}
+**03 · Analysis**\
+Define, test, interpret
+:::
+
+::: {.cycle-node .cycle-products}
+**04 · Products**\
+Explain for each audience
+:::
+
+::: {.cycle-node .cycle-decision}
+**05 · Decision**\
+Act, evaluate, feed back
+:::
+
+::: {.cycle-core}
+**Reproducibility**\
+**& transparency**
+
+Proposed engineering practices\
+Pinned environments · fixed seeds\
+targets DAG · Quarto outputs\
+Unit tests · change logs · CI
+:::
+
+:::::
+
+
+::: {.speaker-note}
+Explain the cycle clockwise. Reproducibility and transparency apply to every stage. The dashed return arrow carries experience from the decision back into the next question. These engineering practices describe the proposed workflow, not a claim that every tool is already implemented in the linked repository.
+
+- Code will not run elsewhere: use a Docker image and pin dependencies with renv or Nix.
+- Results shift between runs: set random seeds in code and use a targets dependency graph to manage reruns. Reproducibility also requires stable inputs, environments and deterministic computations; a DAG alone does not guarantee identical results.
+- Output does not match the exhibit: have the pipeline generate the tables and figures consumed by Quarto.
+- Definitions drift between years: use unit-tested, versioned indicator functions with a change log.
+- Nobody notices a failure: run continuous integration on every commit to rebuild, test and flag failures.
+
+The repository link gives the audience a route to inspect this presentation. Allow about one minute.
+:::
+
+::::
+
+:::: {.slide .editorial}
+
+## The cycle applied to housing
+
+| Stage | In this housing example |
+|:--|:--|
+| Question | Where does a €1,200 monthly budget cover a 45 m² rental scenario — and how has that changed since 2010? |
+| Data | Advertised apartment rents by commune, 2010 and 2025; Luxembourg CPI to hold purchasing power constant. |
+| Analysis | Among the same 29 observed communes, averages within budget fall from **29 to 11**. This measures a rental scenario, not available homes. |
+| Products | A map showing the change and data gaps; a municipal note identifying what must be established locally. |
+| Decision | **Commission a local study of young adults’ unmet housing demand and social rental availability**, to assess the case for small flats, shared housing or rental-access support. |
+
+
+
+::: {.speaker-note}
+
+Trace the default scenario from question to decision. €1,200 is expressed in 2025 purchasing power; the 2010 equivalent is about €876. The endpoint result uses 29 communes observed in both years, not all Luxembourg. The census motivates the young-adult question but does not establish that rents cause delayed departures. The proposed study should include young adults outside waiting lists, social rental turnover and access barriers. It supplies evidence for choosing an intervention; the map alone does not choose one. The figures here describe the baseline, even if the audience changes the interactive controls.
+
+:::
+
+::::
+
+
+:::: {.slide .editorial}
+
+## The working setup I would bring
+
+Gertler, Galiani and Romero (2018) examined **203 empirical papers across nine economics journals**. Only **14% were fully reproducible from raw data to tables and figures** — 86% were not, including cases with missing materials.
+
+| Failure mode | My proposed safeguard |
+|:--|:--|
+| Code will not run elsewhere | Docker image; dependencies pinned with renv or Nix |
+| Results shift between runs | Fixed seeds and inputs; a targets DAG to manage reruns |
+| Output does not match the exhibit | Pipeline-generated tables and figures consumed by Quarto |
+| Definitions drift between years | Unit-tested, versioned indicator functions; a change log |
+| Failures go unnoticed | CI on every commit: rebuild, test and flag failures |
+
+::: {.small}
+For an observatory, the question returns next year: definitions and geographic changes must remain traceable. These are proposed engineering safeguards, not a classification of failures measured by the study.
+:::
+
+::::: {.setup-footer}
+
+::: {.source}
+[Gertler, Galiani & Romero (2018), *How to make replication the norm*, Nature](https://www.nature.com/articles/d41586-018-02108-9); [supplement, pp. 1–2](https://media.nature.com/original/magazine-assets/d41586-018-02108-9/gertler-et-al.-Comment-supplementary-information).
+:::
+
+```{=html}
+<a class="github-footer" href="https://hdbt.github.io/LISER-Presentation-A-place-of-your-own/" target="_blank" rel="noopener" aria-label="Open the presentation on GitHub Pages"><svg viewBox="0 0 16 16" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>hdbt.github.io/<wbr>LISER-Presentation-A-place-of-your-own/ ↗</span></a>
+```
+
+:::::
+
+::: {.speaker-note}
+Allow about one minute. The sample excludes restricted or proprietary data and covers non-structural empirical papers from the last three issues of nine journals as of May 2016. The 86% is the complement of the reported 14% fully reproducible; it includes missing materials and does not mean 86% of substantive conclusions were disproved. The table is my proposed response to practical risks, with the final two rows addressing ongoing observatory operations. Seeds and a dependency graph alone cannot guarantee identical results across changing inputs, environments or nondeterministic computations. These tools are proposed, not all already implemented in this presentation repository.
+:::
+
+::::
+
+:::: {.slide .editorial}
+
+## One pipeline, five products
+
+One shared set of documented indicators can support different audiences. Each product still needs editorial work, accessibility checks and disclosure review.
+
+| Proposed product | Audience | Purpose |
+|:--|:--|:--|
+| Indicator dashboard | Communal services | Look up and monitor |
+| Four-page note | Collège échevinal | Support a decision |
+| Thematic report | Council and researchers | Document evidence and methods |
+| Restitution workshop | Services and elected members | Challenge and contextualise findings |
+| Public map | Residents and media | Explain the evidence |
+
+
+::: {.speaker-note}
+
+10:15–11:15. Different users need different products; shared indicators do not remove editorial and confidentiality work.
+
+:::
+
+::::
+
+
+:::: {.slide .editorial}
+
+## Agree the decision before collecting more data
+
+In Schifflange, agree a focused brief with the commune’s housing service.
+
+| Agree with the commune | What that means here |
+|:--|:--|
+| **The decision to inform** | Which housing response should be developed for young adults? |
+| **The evidence needed** | Match unmet needs with dwelling types, turnover and access barriers; include people outside waiting lists. |
+| **How findings will be assessed** | Discuss results with housing services and young residents; document uncertainty and protect personal information. |
+
+
+
+::: {.speaker-note}
+
+Allow about one minute. “I would start with the decision the commune needs to make, then agree what evidence would help it choose.” Walk through the brief: decision, evidence, interpretation. Young residents can identify barriers absent from administrative applications. Consultation provides context; it does not replace analytical independence or make a small consultation representative. Agree access and publication rules before extracting personal data.
+
+:::
+
+::::
+
+
+:::: {.slide .editorial}
+
+## A decision note for Schifflange
+
+::: {.small}
+Proposed output following the local study
+:::
+
+::::: {.note-fr style="max-width:none"}
+
+### Note au collège échevinal · Logement des jeunes adultes
+
+**01 · Finding**\
+Which young adults’ needs are least well served? State the evidence, its coverage and remaining uncertainty.
+
+**02 · Options**\
+Compare suitable rental provision, shared housing and access support against those needs and municipal feasibility.
+
+**03 · Next step**\
+Identify which option merits development, who would take it forward and how progress would be assessed.
+
+:::::
+
+The map gives us a question worth investigating. The local observatory brings together the evidence and people needed to turn it into a municipal choice.
+
+
+::: {.speaker-note}
+
+Allow about one minute. Present this as the structure of the deliverable following the commissioned study, not a completed assessment. The note would connect unmet needs to options, implementation responsibilities and follow-up. No intervention has been selected by the current rental map. Close: “The map gives us a question worth investigating. The local observatory brings together the evidence and people needed to turn it into a municipal choice.”
+
+:::
+
+::::
+
+
+
+:::: {.slide .editorial .appendix-detail}
+
+::: {.eyebrow}
+Appendix / Sources
+:::
+
+## Data and references used
+
+| Source | Contribution to this presentation |
+|:--|:--|
+| [Observatoire de l’Habitat · advertised apartment rents](https://data.public.lu/fr/datasets/loyers-annonces-des-logements-par-commune/) | Annual commune averages and advertisement counts, 2009–2025. Local source: `loyers-apparts-2009-2025.xls`. |
+| [STATEC · national CPI (IPCN), DF_E5401](https://lustat.statec.lu/vis?df[ds]=ds-release&df[ag]=LU1&df[id]=DSD_ECOICOP_PRIX@DF_E5401) | All-items monthly IPCN, 2009–2025, base 2015=100. Annual means of 12 observations; used to express purchasing power in 2025 euros. Local source: `ipcn_review_5401.csv`. |
+| [Eurostat · yth_demo_030](https://ec.europa.eu/eurostat/databrowser/view/yth_demo_030/default/table?lang=en) | Estimated departure-age indicator, Luxembourg, both sexes: 26.6 in 2025 (26.9 in 2024). Local source: `leaving_home_eurostat.json`, updated 16 April 2026. |
+| [STATEC · RP2021 n°17, Table 4, p. 8](https://statistiques.public.lu/dam-assets/catalogue-publications/rp-2021/rp17-jeunes/17-03-fr.pdf) | National household-position percentages by age in 2021. Sum of the three child categories: 78.6%, 37.7%, 13.1%. |
+| [ACT · administrative boundaries](https://data.public.lu/fr/datasets/limites-administratives-du-grand-duche-de-luxembourg/) | Fixed 2023 geography: 100 communes. GeoJSON outlines simplified for the map; historical communes harmonised to this geography. |
+| [LISER · Observatoire social de Schifflange, March 2023, pp. 62–63](https://schifflange.lu/wp-content/uploads/2023/04/Rapport-Observatoire-social-Schifflange-final-compressed.pdf#page=62) | Table 20: 246 social rental dwellings, based on Commune de Schifflange data for 2022; discussion of stock, dwelling types and demand. |
+| [Gertler, Galiani & Romero · Nature (2018)](https://www.nature.com/articles/d41586-018-02108-9), [supplement, pp. 1–2](https://media.nature.com/original/magazine-assets/d41586-018-02108-9/gertler-et-al.-Comment-supplementary-information) | Reproducibility example: 14% of 203 sampled empirical papers fully reproducible from raw data to final exhibits. Contextual reference, not a housing dataset. |
+
+::: {.small}
+[Presentation repository](https://github.com/hdbt/LISER-Presentation-A-place-of-your-own) · Local audit: `scripts/12_leaving_home.py`, `data/clean/rental_scenario.csv`, `data/clean/ipcn_annual.csv`. Other exploratory datasets in the project are not inputs to the findings shown here.
+:::
+
+::: {.speaker-note}
+Reference page for questions, not part of the timed talk. All seven sources used for quantitative claims or map geometry are listed. The GitHub repository is a route to inspect the presentation, not an additional empirical source. The official hedonic rental simulator was discussed during preparation but supplies no estimates to this deck.
+:::
+
+::::
+
+:::: {.slide .editorial .appendix-detail}
+
+::: {.eyebrow}
+Appendix / Methods and limitations
+:::
+
+## How to read the results
+
+| Method or limitation | What it means for interpretation |
+|:--|:--|
+| **Illustrative rental scenario** | Commune mean €/m² × chosen area. Advertised, not contracted rents; no adjustment for dwelling quality or size. Small flats can have different €/m². |
+| **Constant purchasing power** | Historical budget = 2025 budget × IPCN(year) / IPCN(2025). €1,200 becomes about €876 in 2010. No earnings adjustment; classify using unrounded values. The nominal toggle is a different comparison. |
+| **Incomplete coverage** | This workbook withholds rates below 30 advertisements. In 2025, 34 of 100 communes have rates; hatching means unavailable, not no housing. Do not generalise this threshold to other Observatoire products. |
+| **Matched geography and sample** | Predecessor rates are offer-weighted only when every component is observed. The baseline 29 → 11 result concerns 29 communes observed in both 2010 and 2025; listing composition can still change. |
+| **Counts are not housing access** | Unweighted commune counts are not counts of people, homes or vacancies. No confidence intervals or quality-adjusted rent index. Deposits, charges, eligibility, transport and shared housing are not modelled. |
+| **No departure or causal estimate** | Eurostat’s departure-age indicator is national; the census is a 2021 snapshot. Neither provides a municipal departure series. The map does not show that rents caused delayed departures. €1,200 and 45 m² are chosen assumptions, not measured young-adult means. |
+| **Local action remains a proposal** | Schifflange’s 246 is a 2022 stock, excluding GLS, emergency housing and assisted ownership—not current vacancies or youth provision. A local study is needed before selecting an intervention. |
+
+::: {.small}
+The reproducibility study’s 86% includes missing materials; it does not mean 86% of conclusions were disproved. Engineering safeguards shown are proposed practices, not all implemented in this repository.
+:::
+
+```{=html}
+<button class="no-print" onclick="window.print()">Print / Save as PDF</button>
+```
+
+::: {.speaker-note}
+Use this page to answer methodological questions. The 29-to-11 statement is the default €1,200 in 2025 purchasing power and 45 m² scenario, even if controls were changed earlier. The matched sample is not representative of all communes; no national young-adult affordability or housing-availability estimate follows. Printing captures the interactive maps in their current state.
+:::
+
+::::
+
+:::::::::::::::::::::::: {.slide}
+
+::::::::::::::::::::::: {.eyebrow}
+
+Appendix / Census living arrangements
+
+:::::::::::::::::::::::
+
+::::::::::::::::::::::: {.two}
+
+:::::::::::::::::::::: {.middle}
+
+## Independence<br>takes shape<br><em class="accent">through the twenties.</em>
+
+```{=html}
+<p class="subtitle">In 2021, 37.7% of 25–29-year-olds were classified as children within the report’s household categories.</p>
+```
+
+```{=html}
+<p class="small">A snapshot of living arrangements. It does not track when individuals first left home, or why they stayed.</p>
+```
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::: {.middle #ageChart}
+
+::::::::::::::::::::: {.age-row}
+
+```{=html}
+<span>20–24 years</span>
+```
+
+```{=html}
+<span class="value">78.6%</span>
+```
+
+:::::::::::::::::::: {.bar}
+
+```{=html}
+<i style="width:78.6%"></i>
+```
+
+::::::::::::::::::::
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.age-row}
+
+```{=html}
+<span>25–29 years</span>
+```
+
+```{=html}
+<span class="value accent">37.7%</span>
+```
+
+:::::::::::::::::::: {.bar}
+
+```{=html}
+<i style="width:37.7%"></i>
+```
+
+::::::::::::::::::::
+
+:::::::::::::::::::::
+
+::::::::::::::::::::: {.age-row}
+
+```{=html}
+<span>30–34 years</span>
+```
+
+```{=html}
+<span class="value">13.1%</span>
+```
+
+:::::::::::::::::::: {.bar}
+
+```{=html}
+<i style="width:13.1%"></i>
+```
+
+::::::::::::::::::::
+
+:::::::::::::::::::::
+
+```{=html}
+<p class="small">Children of a couple + a lone parent + a multi-family household. Sums of the published percentages; all three categories included.</p>
+```
+
+::::::::::::::::::::::
+
+:::::::::::::::::::::::
+
+```{=html}
+<p class="source">STATEC / Chauvel & Le Bihan, RP2021 n°17, Table 4, p. 8. Luxembourg-wide; not commune estimates.</p>
+```
+
+
+::: {.speaker-note}
+
+Background for discussion only. The census describes national household positions in 2021, not individual departure histories. These percentages are distinct from the Eurostat departure-age indicator on slide 2.
+
+:::
+
+::::::::::::::::::::::::
+
+
+
