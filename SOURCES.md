@@ -1,6 +1,6 @@
 # Source provenance
 
-Snapshots packaged on 7 September 2026. Original download dates were not consistently recorded; INPUT_SHA256.json identifies the exact files.
+Package refreshed on 8 September 2026; data snapshots unchanged. Original download dates were not consistently recorded; INPUT_SHA256.json identifies the exact files.
 
 ## Data and references used
 

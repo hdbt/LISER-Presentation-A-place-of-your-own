@@ -1,6 +1,6 @@
 # LISER presentation replication package
 
-Frozen snapshot of Hamid Bulut's 14-slide presentation, prepared for 9 September 2026. The original files remain outside this package. All computational data inputs are bundled; no live data API is called during rebuilding.
+Snapshot refreshed on 8 September 2026 of Hamid Bulut's 12-slide presentation (9 main slides and 3 appendix slides), prepared for 9 September 2026. The original files remain outside this package. All computational data inputs are bundled; no live data API is called during rebuilding.
 
 ## View or edit
 

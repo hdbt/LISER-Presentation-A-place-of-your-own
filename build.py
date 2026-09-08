@@ -27,7 +27,7 @@ def main():
             shutil.copy2(ROOT / name, args.output_dir / name)
     report = {'python':sys.version, 'quarto':subprocess.check_output([args.quarto,'--version'],text=True).strip(),
               'node':subprocess.check_output([args.node,'--version'],text=True).strip(), 'status':'passed',
-              'checks':'input hashes, geometry and data snapshot equality, baseline calculations, 14 slide DOM control states',
+              'checks':'input hashes, geometry and data snapshot equality, baseline calculations, 12 slide DOM control states',
               'visual_review':'not performed by build; inspect at presentation resolution'}
     (ROOT/'BUILD_REPORT.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print('PASS: presentation rebuilt.')

@@ -436,9 +436,9 @@ Schifflange illustrates what local evidence adds to the rental scenario. The 246
 
 :::: {.slide .editorial}
 
-## The analytical cycle
+## The analytical cycle applied to housing
 
-::::: {.analytical-cycle role="group" aria-label="Question, Data, Analysis, Products, Decision, then feedback to the question. Reproducibility and transparency underpin every stage."}
+::::: {.analytical-cycle .applied-cycle role="group" aria-label="Question, Data, Analysis, Products, Decision, then feedback to the question. Reproducibility and transparency underpin every stage."}
 
 ```{=html}
 <svg class="cycle-arrows" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="cycle-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" overflow="visible"><path d="M0,0 L8,4 L0,8" fill="#147c68"/></marker></defs><g fill="none" stroke="#147c68" stroke-width="2.5" marker-end="url(#cycle-arrow)"><path d="M650 48 Q790 48 825 115"/><path d="M850 220 Q850 280 775 320"/><path d="M560 375 L445 375"/><path d="M225 320 Q150 280 150 220"/><path d="M175 115 Q210 48 350 48" stroke-dasharray="6 6"/></g></svg>
@@ -446,27 +446,27 @@ Schifflange illustrates what local evidence adds to the rental scenario. The 246
 
 ::: {.cycle-node .cycle-question}
 **01 · Question**\
-Agree the municipal need
+Where does €1,200 cover 45 m²?
 :::
 
 ::: {.cycle-node .cycle-data}
 **02 · Data**\
-Source, document, protect
+Advertised rents · CPI<br>2010 and 2025
 :::
 
 ::: {.cycle-node .cycle-analysis}
 **03 · Analysis**\
-Define, test, interpret
+Within-budget averages<br>29 → 11 in the matched sample
 :::
 
 ::: {.cycle-node .cycle-products}
 **04 · Products**\
-Explain for each audience
+Map of costs and data gaps<br>Municipal briefing
 :::
 
 ::: {.cycle-node .cycle-decision}
 **05 · Decision**\
-Act, evaluate, feed back
+Commission a youth housing-needs<br>and rental-availability study
 :::
 
 ::: {.cycle-core}
@@ -482,48 +482,21 @@ Unit tests · change logs · CI
 :::::
 
 
+::: {.small}
+Baseline: €1,200 in 2025 purchasing power · 45 m² · 29 communes observed in both years. Counts are commune averages, not available homes. The study would inform which housing response to develop.
+:::
+
 ::: {.speaker-note}
-Explain the cycle clockwise. Reproducibility and transparency apply to every stage. The dashed return arrow carries experience from the decision back into the next question. These engineering practices describe the proposed workflow, not a claim that every tool is already implemented in the linked repository.
-
-- Code will not run elsewhere: use a Docker image and pin dependencies with renv or Nix.
-- Results shift between runs: set random seeds in code and use a targets dependency graph to manage reruns. Reproducibility also requires stable inputs, environments and deterministic computations; a DAG alone does not guarantee identical results.
-- Output does not match the exhibit: have the pipeline generate the tables and figures consumed by Quarto.
-- Definitions drift between years: use unit-tested, versioned indicator functions with a change log.
-- Nobody notices a failure: run continuous integration on every commit to rebuild, test and flag failures.
-
-The repository link gives the audience a route to inspect this presentation. Allow about one minute.
+Allow about 90 seconds. Follow the example clockwise: a specific rental-budget question; advertised rents and CPI; 29 within-budget averages falling to 11 among the same observed communes; a map and municipal briefing; then commission a study of young adults’ unmet needs and social rental availability, including non-applicants. The study would inform whether suitable flats, shared housing or access support merit development. The dashed arrow means the study's findings inform the next question. These are the baseline figures even if map controls changed earlier. Reproducibility and transparency underpin every step; save detailed engineering safeguards for the next slide. Proposed tools are not all implemented in the repository. The map alone does not establish departures, displacement or which intervention to choose.
 :::
 
 ::::
 
 :::: {.slide .editorial}
 
-## The cycle applied to housing
+## The working setup I propose
 
-| Stage | In this housing example |
-|:--|:--|
-| Question | Where does a €1,200 monthly budget cover a 45 m² rental scenario — and how has that changed since 2010? |
-| Data | Advertised apartment rents by commune, 2010 and 2025; Luxembourg CPI to hold purchasing power constant. |
-| Analysis | Among the same 29 observed communes, averages within budget fall from **29 to 11**. This measures a rental scenario, not available homes. |
-| Products | A map showing the change and data gaps; a municipal note identifying what must be established locally. |
-| Decision | **Commission a local study of young adults’ unmet housing demand and social rental availability**, to assess the case for small flats, shared housing or rental-access support. |
-
-
-
-::: {.speaker-note}
-
-Trace the default scenario from question to decision. €1,200 is expressed in 2025 purchasing power; the 2010 equivalent is about €876. The endpoint result uses 29 communes observed in both years, not all Luxembourg. The census motivates the young-adult question but does not establish that rents cause delayed departures. The proposed study should include young adults outside waiting lists, social rental turnover and access barriers. It supplies evidence for choosing an intervention; the map alone does not choose one. The figures here describe the baseline, even if the audience changes the interactive controls.
-
-:::
-
-::::
-
-
-:::: {.slide .editorial}
-
-## The working setup I would bring
-
-Gertler, Galiani and Romero (2018) examined **203 empirical papers across nine economics journals**. Only **14% were fully reproducible from raw data to tables and figures** — 86% were not, including cases with missing materials.
+Gertler, Galiani and Romero (2018) examined **203 empirical papers across nine economics journals**. Only **14% were fully reproducible from raw data to tables and figures**.
 
 | Failure mode | My proposed safeguard |
 |:--|:--|
@@ -533,9 +506,6 @@ Gertler, Galiani and Romero (2018) examined **203 empirical papers across nine e
 | Definitions drift between years | Unit-tested, versioned indicator functions; a change log |
 | Failures go unnoticed | CI on every commit: rebuild, test and flag failures |
 
-::: {.small}
-For an observatory, the question returns next year: definitions and geographic changes must remain traceable. These are proposed engineering safeguards, not a classification of failures measured by the study.
-:::
 
 ::::: {.setup-footer}
 
@@ -579,64 +549,21 @@ One shared set of documented indicators can support different audiences. Each pr
 ::::
 
 
-:::: {.slide .editorial}
+:::: {.slide .editorial style="justify-content:center;align-items:center;text-align:center"}
 
-## Agree the decision before collecting more data
+# Thank you
 
-In Schifflange, agree a focused brief with the commune’s housing service.
-
-| Agree with the commune | What that means here |
-|:--|:--|
-| **The decision to inform** | Which housing response should be developed for young adults? |
-| **The evidence needed** | Match unmet needs with dwelling types, turnover and access barriers; include people outside waiting lists. |
-| **How findings will be assessed** | Discuss results with housing services and young residents; document uncertainty and protect personal information. |
-
-
-
-::: {.speaker-note}
-
-Allow about one minute. “I would start with the decision the commune needs to make, then agree what evidence would help it choose.” Walk through the brief: decision, evidence, interpretation. Young residents can identify barriers absent from administrative applications. Consultation provides context; it does not replace analytical independence or make a small consultation representative. Agree access and publication rules before extracting personal data.
-
-:::
-
-::::
-
-
-:::: {.slide .editorial}
-
-## A decision note for Schifflange
+Questions & discussion
 
 ::: {.small}
-Proposed output following the local study
+Hamid Bulut · 9 September 2026
 :::
 
-::::: {.note-fr style="max-width:none"}
-
-### Note au collège échevinal · Logement des jeunes adultes
-
-**01 · Finding**\
-Which young adults’ needs are least well served? State the evidence, its coverage and remaining uncertainty.
-
-**02 · Options**\
-Compare suitable rental provision, shared housing and access support against those needs and municipal feasibility.
-
-**03 · Next step**\
-Identify which option merits development, who would take it forward and how progress would be assessed.
-
-:::::
-
-The map gives us a question worth investigating. The local observatory brings together the evidence and people needed to turn it into a municipal choice.
-
-
 ::: {.speaker-note}
-
-Allow about one minute. Present this as the structure of the deliverable following the commissioned study, not a completed assessment. The note would connect unmet needs to options, implementation responsibilities and follow-up. No intervention has been selected by the current rental map. Close: “The map gives us a question worth investigating. The local observatory brings together the evidence and people needed to turn it into a municipal choice.”
-
+Thank the panel and invite questions. Leave this slide on screen; use the appendix if asked about sources or limitations.
 :::
 
 ::::
-
-
 
 :::: {.slide .editorial .appendix-detail}
 

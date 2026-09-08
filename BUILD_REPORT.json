@@ -3,6 +3,6 @@
   "quarto": "1.7.32",
   "node": "v24.19.0",
   "status": "passed",
-  "checks": "input hashes, geometry and data snapshot equality, baseline calculations, 14 slide DOM control states",
+  "checks": "input hashes, geometry and data snapshot equality, baseline calculations, 12 slide DOM control states",
   "visual_review": "not performed by build; inspect at presentation resolution"
 }

@@ -1,4 +1,4 @@
-# Validation record — 7 September 2026
+# Validation record — 8 September 2026
 
 ## Executed successfully
 
@@ -12,7 +12,7 @@ The complete `build.py` workflow was run from the separate replication-package d
 - Matched 2010–2025 baseline: 29 -> 11 among the same 29 communes.
 - Eurostat 2025 figure and manually transcribed census/Schifflange arithmetic checks passed.
 - Presentation HTML rendered successfully. The build no longer requires or exports the separately maintained speaker guide.
-- Node DOM-stub checks passed for 14 slide states, calculations, control changes, reset, selection, zoom and absence of external asset dependencies.
+- Node DOM-stub checks passed for 12 slide states, calculations, control changes, reset, selection, zoom and absence of external asset dependencies.
 
 ## Not validated here
 
