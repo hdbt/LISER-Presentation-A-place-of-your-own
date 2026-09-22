@@ -1,7 +1,5 @@
 # LISER presentation replication package
 
-Snapshot refreshed on 8 September 2026 of Hamid Bulut's 12-slide presentation (9 main slides and 3 appendix slides), prepared for 9 September 2026. The original files remain outside this package. All computational data inputs are bundled; no live data API is called during rebuilding.
-
 ## View or edit
 
 - Open `LISER_Combined.html` for the self-contained interactive slides.
@@ -66,10 +64,6 @@ Python, Node and Quarto versions are fixed in the Dockerfile. Container image ta
 See `SOURCES.md`, `INPUT_SHA256.json` and `reference/hand_transcribed_claims.json`. Raw rent/CPI/geometry/Eurostat snapshots are computational inputs. Census, Schifflange and reproducibility-study numbers are transcribed published summaries, with source URLs and table/page identifiers. The package does not contain confidential microdata or the complete published PDFs. Those documents are not needed to rebuild the deck, but consult the linked originals to audit the transcriptions.
 
 The 2025 baseline is 14 within-budget averages among 34 observed communes. The matched 2010–2025 comparison is 29 -> 11 among 29 communes. This is an advertised-rent scenario, not an income-based affordability measure, a count of available homes, a departure-age map or evidence of displacement. The proposed local study and engineering practices are not presented as completed interventions or as all implemented here.
-
-`data/commune_crosswalk.json` preserves the original analyst's spelling and merger decisions. The geometry uses a local display projection, Douglas–Peucker simplification, exterior rings and removal of very small polygon components; label positions are vertex averages, not analytical centroids. Never use display geometry for area or distance estimates. Rates are offer-weighted only where every predecessor is observed. The raw GeoJSON is retained for independent geographic work.
-
-Quarto prose is maintained manually. The separate rehearsal guide is intentionally excluded. Numerical rebuild tests detect changed inputs/results; they do not automatically update prose or validate every narrative claim. No random simulation occurs in this build, so it does not need a seed or an R targets pipeline. Historical migration scripts and unrelated house-price analyses are intentionally omitted.
 
 ## Validation status
 
