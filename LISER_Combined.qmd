@@ -15,10 +15,6 @@ output-file: LISER_Combined.html
 lang: en
 ---
 
-<!-- EDIT THIS FILE. Each .slide block is one slide. Normal Markdown edits prose.
-The .speaker-note block is shown with N / Notes, not on the slide.
-Keep map IDs and HTML controls intact. Render: quarto render LISER_Combined.qmd
-Original Beamer and map presentations are preserved. -->
 
 
 :::::::::::::::::::::::: {.slide .active data-notes="0"}
